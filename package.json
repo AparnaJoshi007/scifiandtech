@@ -1,14 +1,14 @@
 {
-  "name": "gatsby-tutorial-starter",
-  "author": "Justin Formentin",
-  "title": "Gatsby V2 Tutorial Starter",
+  "name": "gatsby-scifiandtech-blog",
+  "author": "Aparna Joshi",
+  "title": "ScifiandTech",
   "description": "My Blog",
-  "homepage": "https://gatsby-tutorial-starter.netlify.com",
+  "homepage": "https://scifiandtech.netlify.com",
   "license": "MIT",
-  "version": "0.0.7",
+  "version": "0.0.1",
   "repository": {
     "type": "git",
-    "url": "https://github.com/justinformentin/gatsby-v2-tutorial-starter"
+    "url": "https://github.com/AparnaJoshi007/scifiandtech"
   },
   "scripts": {
     "develop": "gatsby develop",
@@ -66,9 +66,10 @@
     "prettier": "^1.18.2"
   },
   "keywords": [
-    "justin formentin",
+    "aparna joshi",
     "personal blog",
     "tutorial",
+    "scifiandtech",
     "gatsby",
     "emotion"
   ]
