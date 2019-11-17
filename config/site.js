@@ -7,12 +7,12 @@ module.exports = {
   siteUrl: 'https://scifiandtech.netlify.com', // url + pathPrefix
   siteLanguage: 'en', // Language Tag on <html> element
   logo: 'static/icons/logo.png', // Used for SEO
-  banner: 'static/logo/image.png',
+  banner: 'static/logo/image_white.png',
   // JSONLD / Manifest
   favicon: 'static/icons/image.png', // Used for manifest favicon generation
   shortName: 'ScifiandTech', // shortname for manifest. MUST be shorter than 12 characters
   author: 'Aparna', // Author for schemaORGJSONLD
-  themeColor: '#7140cc',
+  themeColor: '#772eff',
   backgroundColor: '#f4f7f6',
   twitter: '@aparna_joshi_', // Twitter Username
 };

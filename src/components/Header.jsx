@@ -4,12 +4,6 @@ import Img from 'gatsby-image';
 import PropTypes from 'prop-types';
 
 const Wrapper = styled.header`
-  -webkit-clip-path: polygon(100% 0, 0 0, 0 70%, 50% 100%, 100% 70%);
-  clip-path: polygon(100% 0, 0 0, 0 70%, 50% 100%, 100% 70%);
-  @media (max-width: ${props => props.theme.breakpoints.s}) {
-    -webkit-clip-path: polygon(100% 0, 0 0, 0 90%, 50% 100%, 100% 90%);
-    clip-path: polygon(100% 0, 0 0, 0 90%, 50% 100%, 100% 90%);
-  }
   background: ${props => props.theme.gradient.rightToLeft};
   height: 300px;
   @media (max-width: ${props => props.theme.breakpoints.m}) {
@@ -39,10 +33,6 @@ const Text = styled.div`
   align-items: center;
 `;
 
-const Subtitle = styled.p`
-  max-width: 650px;
-  color: ${props => props.theme.colors.white.light};
-`;
 
 const Header = ({ children, title, date, cover }) => (
   <Wrapper>
@@ -51,7 +41,7 @@ const Header = ({ children, title, date, cover }) => (
       <h1>{title}</h1>
       <h3>{date}</h3>
 
-      {children && <Subtitle>{children}</Subtitle>}
+      {children}
     </Text>
   </Wrapper>
 );

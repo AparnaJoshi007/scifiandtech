@@ -6,7 +6,7 @@ import { Header } from 'components';
 import { Layout, Container } from 'layouts';
 
 const ErrorPage = center => (
-  <Layout>
+  <Layout headerlink="">
     <Helmet title={'404'} />
     <Header title="404" />
     <Container center={center}>

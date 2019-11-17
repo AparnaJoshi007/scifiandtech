@@ -30,7 +30,7 @@ const Tag = ({ pageContext }) => {
   const { posts, tagName } = pageContext;
   const upperTag = tagName.charAt(0).toUpperCase() + tagName.slice(1);
   return (
-    <Layout>
+    <Layout headerlink={`/tags/${tagName}`}>
       <Helmet title={`${tagName} | ${config.siteTitle}`} />
       <Header title={upperTag}>
         <StyledLink to="/tags">All Tags</StyledLink>

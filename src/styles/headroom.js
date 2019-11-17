@@ -3,7 +3,7 @@ import theme from '../../config/theme';
 
 const headroom = css`
   .headroom-wrapper {
-    position: fixed;
+    position: relative;
     width: 100%;
     z-index: 2000;
     top: 0;
@@ -25,6 +25,7 @@ const headroom = css`
     position: relative;
     transform: translateY(0);
     transition: ${theme.transitions.headroom.transition};
+    background: ${theme.colors.white.base};
   }
   .headroom--scrolled {
     transition: ${theme.transitions.headroom.transition};
@@ -38,17 +39,17 @@ const headroom = css`
     position: fixed;
     transform: translateY(0);
     transition: ${theme.transitions.headroom.transition};
-    background-color: ${theme.colors.white.light};
+    background: ${theme.colors.white.base};
     box-shadow: 0 5px 30px rgba(0, 0, 0, 0.2);
     nav {
       a {
-        color: ${theme.colors.black.base};
+        color: ${theme.colors.white.base};
         &:hover {
-          border-color: ${theme.colors.black.base};
-          color: ${theme.colors.black.base};
+          border-color: ${theme.colors.white.light};
+          color: ${theme.colors.white.base};
         }
         &:focus {
-          color: ${theme.colors.black.base};
+          color: ${theme.colors.white.base};
         }
       }
     }

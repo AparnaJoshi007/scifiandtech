@@ -5,7 +5,7 @@ import { Header } from 'components';
 import { Layout, Container } from 'layouts';
 
 const About = center => (
-  <Layout>
+  <Layout headerlink="/about">
     <Helmet title={'About Page'} />
     <Header title="About Page">ScifiandTech</Header>
     <Container center={center}>

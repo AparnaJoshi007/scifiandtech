@@ -11,7 +11,8 @@ const PostWrapper = styled.div`
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-between;
-  margin: 4rem 4rem 1rem 4rem;
+  background: ${props => props.theme.colors.white.light};
+  padding: 4rem 4rem 1rem 4rem;
   @media (max-width: 1000px) {
     margin: 4rem 2rem 1rem 2rem;
   }
@@ -23,9 +24,11 @@ const PostWrapper = styled.div`
 const Index = ({ data }) => {
   const { edges } = data.allMarkdownRemark;
   return (
-    <Layout>
+    <Layout headerlink="/">
       <Helmet title={'Home Page'} />
-      <Header title="Home Page">ScifiandTech</Header>
+      <Header>
+          <h1>Hello</h1>
+      </Header>
       <PostWrapper>
         {edges.map(({ node }) => {
           const { id, excerpt, frontmatter } = node;

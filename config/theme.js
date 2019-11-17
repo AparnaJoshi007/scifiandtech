@@ -1,7 +1,7 @@
 export const colors = {
   white: {
     base: '#fff',
-    light: '#f0f0f0',
+    light: '#FAFAFA',
     grey: '#cecece',
     dark: '#a0afd7',
   },
@@ -11,14 +11,17 @@ export const colors = {
     blue: '#2e3246',
   },
   primary: {
-    base: '#3498db',
-    light: '#3e5fbc',
-    dark: '#284187',
+    base: '#7140cc',
+    light: '#7a4ccf',
+    dark: '#6835c7',
   },
   background: {
-    light: '#3e5fbc',
-    dark: '#284187',
+    light: '#7a4ccf',
+    dark: '#3155dc',
   },
+  hover: {
+    base: '#4776e6'
+  }
 };
 
 export const shadow = {

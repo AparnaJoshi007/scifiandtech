@@ -6,12 +6,9 @@ const Wrapper = styled.footer`
   padding-top: 2rem;
   bottom: 0;
   box-shadow: ${props => props.theme.shadow.footer};
-  background: ${props => props.theme.gradient.leftToRight};
+  background: ${props => props.theme.colors.black.base};
   font-family: ${props => props.theme.fontFamily.body};
   font-weight: 500;
-  @media (max-width: ${props => props.theme.breakpoints.s}) {
-    padding-top: 7rem;
-  }
 `;
 
 const Text = styled.div`
@@ -25,9 +22,9 @@ const Footer = () => (
   <Wrapper>
     <Text>
       <span>
-        &copy;ScifiandTech - 2019 {' '}
-        <a href="https://scifiandtech.netlify.com">ScifiandTech</a>
+        &copy;ScifiandTech - 2019
       </span>
+      <span>Built with Gatsby</span>
     </Text>
   </Wrapper>
 );
