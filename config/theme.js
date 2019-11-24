@@ -9,6 +9,7 @@ export const colors = {
     base: '#333438',
     light: '#4b4e57',
     blue: '#2e3246',
+    blackHover: "#0000007d"
   },
   primary: {
     base: '#7140cc',
@@ -18,6 +19,10 @@ export const colors = {
   background: {
     light: '#7a4ccf',
     dark: '#3155dc',
+  },
+  complimentary: {
+    light: "#7bd74a",
+    dark: "#289900"
   },
   hover: {
     base: '#4776e6'
@@ -70,9 +75,9 @@ export const theme = {
   },
   fontFamily: {
     // eslint-disable-next-line
-    body: `Open Sans,-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'`,
+    body: `-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'`,
     // eslint-disable-next-line
-    heading: `Candal, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'`,
+    heading: `-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'`,
   },
   layout: {
     article: '46rem',

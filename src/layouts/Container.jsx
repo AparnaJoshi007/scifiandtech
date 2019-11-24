@@ -6,7 +6,7 @@ const Wrapper = styled.section`
   text-align: ${props => (props.center ? 'center' : '')};
   margin: auto;
   padding: 3rem 1.5rem;
-  width: 60%;
+  width: 70%;
   max-width: ${props => props.theme.layout[props.type]};
   height: 100%;
   flex: 1;
@@ -16,7 +16,9 @@ const Wrapper = styled.section`
   }
 
   @media (max-width: ${props => props.theme.breakpoints.s}) {
-    width: 95%;
+    width: 100%;
+    padding: 0;
+    margin-bottom: 24px;
   }
 `;
 

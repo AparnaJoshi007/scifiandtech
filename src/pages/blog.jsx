@@ -2,7 +2,7 @@ import React from 'react';
 import { graphql } from 'gatsby';
 import Helmet from 'react-helmet';
 import PropTypes from 'prop-types';
-import { Header, BlogList } from 'components';
+import { SimpleHeader, BlogList } from 'components';
 import { Layout } from 'layouts';
 
 const Blog = ({ data }) => {
@@ -10,7 +10,9 @@ const Blog = ({ data }) => {
   return (
     <Layout headerlink="/blog">
       <Helmet title={'Blog Page'} />
-      <Header title="Blog Page">ScifiandTech</Header>
+      <SimpleHeader title={"Blogs"}>
+          <div>Get all the latest blogs here.</div>
+      </SimpleHeader>
       {edges.map(({ node }) => (
         <BlogList
           key={node.id}

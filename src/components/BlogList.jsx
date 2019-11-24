@@ -8,6 +8,8 @@ import { Container } from 'layouts';
 
 const Wrapper = styled.article`
   margin: 0 3rem;
+  background: ${props => props.theme.colors.white.light};
+  border-radius: ${props => props.theme.borderRadius.default};
 `;
 
 const Image = styled.div`
@@ -58,14 +60,16 @@ const Image = styled.div`
 
 const Information = styled.div`
   h1 {
-    font-size: 2rem;
+    font-size: 1.5rem;
+    font-weight: 500;
     display: inline-block;
-    color: ${props => props.theme.colors.black.base};
+    color: ${props => props.theme.colors.primary.light};
     transition: all ${props => props.theme.transitions.default.duration};
     &:hover {
-      color: ${props => props.theme.colors.primary.base};
+      color: ${props => props.theme.colors.primary.dark};
     }
   }
+  font-family: ${props => props.theme.fontFamily.body};
   text-align: center;
   flex-basis: 100%;
   max-width: 100%;
@@ -84,6 +88,7 @@ const Date = styled.div`
 
 const Title = styled.h1`
   margin: 0;
+  
 `;
 
 const BlogList = ({ path, cover, title, date, excerpt, tags }) => (
@@ -91,7 +96,7 @@ const BlogList = ({ path, cover, title, date, excerpt, tags }) => (
     <Wrapper>
       <Image>
         <Link to={path} title={title}>
-          <Img fluid={cover} />
+          <Img fixed={cover} />
         </Link>
       </Image>
       <Information>

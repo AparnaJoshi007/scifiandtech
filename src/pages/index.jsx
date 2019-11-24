@@ -3,7 +3,7 @@ import { graphql } from 'gatsby';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 import styled from '@emotion/styled';
-import { Header, PostList } from 'components';
+import { SimpleHeader, PostList } from 'components';
 import { Layout } from 'layouts';
 
 const PostWrapper = styled.div`
@@ -19,16 +19,31 @@ const PostWrapper = styled.div`
   @media (max-width: 700px) {
     margin: 4rem 1rem 1rem 1rem;
   }
+  @media (max-width: ${props => props.theme.breakpoints.s}) {
+    padding: 0;
+  }
+`;
+
+const Anchor = styled.a`
+  box-shadow: 0 1px 0 0 currentColor;
+  color: ${props => props.theme.colors.primary.base};
+  font-weight: bold;
+  &:hover {
+    color: ${props => props.theme.colors.complimentary.dark};
+  }
 `;
 
 const Index = ({ data }) => {
   const { edges } = data.allMarkdownRemark;
+  const  edgesSiteData = data.allSite.edges[0];
+  const { twitterLink }  = edgesSiteData.node.siteMetadata
   return (
     <Layout headerlink="/">
       <Helmet title={'Home Page'} />
-      <Header>
-          <h1>Hello</h1>
-      </Header>
+      <SimpleHeader title={"Abracadabra"}>
+          <div>Hi, I'm <Anchor href={twitterLink}>Aparna Joshi</Anchor>. I'm a technology enthusiast and an anime geek.</div>
+          <div>Bringing a little bit of technology and lots of fiction by yours truly</div>
+      </SimpleHeader>
       <PostWrapper>
         {edges.map(({ node }) => {
           const { id, excerpt, frontmatter } = node;
@@ -74,6 +89,15 @@ Index.propTypes = {
 
 export const query = graphql`
   query {
+    allSite {
+      edges {
+        node {
+          siteMetadata {
+            twitterLink
+          }
+        }
+      }
+    }
     allMarkdownRemark(
       limit: 6
       sort: { order: DESC, fields: [frontmatter___date] }
@@ -92,7 +116,7 @@ export const query = graphql`
                 fluid(
                   maxWidth: 1000
                   quality: 90
-                  traceSVG: { color: "#2B2B2F" }
+                  traceSVG: { color: "red" }
                 ) {
                   ...GatsbyImageSharpFluid_withWebp_tracedSVG
                 }

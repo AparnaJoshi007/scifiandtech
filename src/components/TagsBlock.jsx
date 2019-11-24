@@ -11,13 +11,12 @@ const TagsContainer = styled.div`
   justify-content: center;
   a {
     margin: 0 1rem 1rem 0;
-    color: ${props => props.theme.colors.black.blue};
+    color: ${props => props.theme.colors.primary.light};
     padding: 0.3rem 0.6rem;
-    background: ${props => props.theme.colors.white.grey};
+    background: rgb(239,236,252);
     border-radius: 10px;
     &:hover {
-      color: ${props => props.theme.colors.white.light};
-      background: ${props => props.theme.colors.primary.light};
+      color: ${props => props.theme.colors.complimentary.dark};
       border: ${props => props.theme.colors.primary.light};
     }
   }

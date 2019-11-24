@@ -11,7 +11,7 @@
 
 <p align="center">
   <strong>
-    View the website at <a href="https://scifiandtech.netlify.com">scifiandtech.netlify.com</a>.
+    View the website at <a href="https://scifiandtech.netlify.com">scifiandtech.netlify.com</a>
   </strong>
 </p>
 

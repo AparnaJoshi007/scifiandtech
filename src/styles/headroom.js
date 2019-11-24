@@ -41,18 +41,6 @@ const headroom = css`
     transition: ${theme.transitions.headroom.transition};
     background: ${theme.colors.white.base};
     box-shadow: 0 5px 30px rgba(0, 0, 0, 0.2);
-    nav {
-      a {
-        color: ${theme.colors.white.base};
-        &:hover {
-          border-color: ${theme.colors.white.light};
-          color: ${theme.colors.white.base};
-        }
-        &:focus {
-          color: ${theme.colors.white.base};
-        }
-      }
-    }
     padding-top: 0.75rem;
     padding-bottom: 0.75rem;
     svg {

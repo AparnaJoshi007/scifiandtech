@@ -15,4 +15,7 @@ module.exports = {
   themeColor: '#772eff',
   backgroundColor: '#f4f7f6',
   twitter: '@aparna_joshi_', // Twitter Username
+  twitterLink: "https://twitter.com/aparna_joshi_",
+  linkedIn: "Aparna Joshi",
+  linkedInLink: "https://www.linkedin.com/in/aparna-joshi-9698a988/"
 };

@@ -73,6 +73,7 @@ const StyledLink = styled(Link)`
 `;
 
 const Image = styled.div`
+  opacity: 0.6;
   position: absolute;
   top: 0;
   overflow: hidden;
@@ -94,15 +95,22 @@ const Image = styled.div`
 `;
 
 const Info = styled.div`
-  color: ${props => props.theme.colors.white.light};
-  margin: 0 1rem 1.25rem 1.25rem;
+  background: ${props => props.theme.colors.black.blackHover};
+  color: rgb(239,236,252);
+  padding: 0 1rem 1.25rem 1.25rem;
   position: absolute;
   bottom: 0;
   left: 0;
+  border-radius: 0.4rem;
+  font-family: ${props => props.theme.fontFamily.body}
 `;
 
 const Title = styled.h2`
   margin-bottom: 0.6rem;
+  font-family: ${props => props.theme.fontFamily.body};
+  &:hover {
+    color: ${props => props.theme.colors.complimentary.dark};
+  }
 `;
 
 const PostList = ({ cover, path, date, title, excerpt }) => (
