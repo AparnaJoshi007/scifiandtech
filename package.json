@@ -20,7 +20,7 @@
     "lint-errors": "eslint src/**/*.{js,jsx} --quiet",
     "lint": "eslint src/**/*.{js,jsx}",
     "start": "npm run develop",
-    "netlify-server": "netlify-lambda build server"
+    "build:server": "netlify-lambda build lambda"
   },
   "dependencies": {
     "@babel/core": "^7.6.0",
@@ -48,6 +48,7 @@
     "gatsby-transformer-sharp": "^2.2.13",
     "prismjs": "^1.17.1",
     "prop-types": "^15.7.2",
+    "querystring": "^0.2.0",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
     "react-headroom": "^2.2.8",
