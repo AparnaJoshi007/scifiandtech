@@ -6,7 +6,7 @@ exports.handler = async (event, context) => {
     return { statusCode: 405, body: "Method Not Allowed" };
   }
 
-  const name = event.body.name || "World";
+  const { name } = JSON.parse(event.body) || "World";
 
   return {
     statusCode: 200,
