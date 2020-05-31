@@ -113,7 +113,7 @@ const Title = styled.h2`
   }
 `;
 
-const PostList = ({ cover, path, date, title, excerpt }) => (
+const PostList = ({ cover, path, date, title, core, published }) => (
   <Wrapper>
     <Image>
       <Img fluid={cover} />
@@ -122,7 +122,7 @@ const PostList = ({ cover, path, date, title, excerpt }) => (
       <Info>
         <span>{date}</span>
         <Title>{title}</Title>
-        <span>{excerpt}</span>
+        <span>{core}</span>
       </Info>
     </StyledLink>
   </Wrapper>
@@ -133,7 +133,8 @@ export default PostList;
 PostList.propTypes = {
   cover: PropTypes.object.isRequired,
   path: PropTypes.string.isRequired,
-  excerpt: PropTypes.string,
+  core: PropTypes.string,
   date: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
+  published: PropTypes.bool.isRequired
 };

@@ -5,6 +5,7 @@ date: "2018-10-20"
 title: "Post Number Six"
 tags: ['gatsby', 'tutorial']
 published: true
+core: "Movement low present the and dry refute. Chosen any incurred even the following organization. Collection hometown were lots its improve if than back quickly film day. Judgment, headline into helplessly with elite. Their hollow one to up unmolested be the of the it the it may its phase surprise a."
 ---
 
 Movement low present the and dry refute. Chosen any incurred even the following organization. Collection hometown were lots its improve if than back quickly film day. Judgment, headline into helplessly with elite. Their hollow one to up unmolested be the of the it the it may its phase surprise a.

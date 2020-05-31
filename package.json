@@ -19,14 +19,17 @@
     "format": "prettier --write src/**/*.{js,jsx}",
     "lint-errors": "eslint src/**/*.{js,jsx} --quiet",
     "lint": "eslint src/**/*.{js,jsx}",
-    "start": "npm run develop"
+    "start": "npm run develop",
+    "netlify-server": "netlify-lambda build server"
   },
   "dependencies": {
     "@babel/core": "^7.6.0",
     "@emotion/core": "^10.0.17",
     "@emotion/styled": "^10.0.17",
     "babel-plugin-emotion": "^10.0.17",
+    "body-parser": "^1.19.0",
     "emotion-theming": "^10.0.17",
+    "express": "^4.17.1",
     "gatsby": "^2.15.9",
     "gatsby-image": "^2.2.17",
     "gatsby-plugin-catch-links": "^2.1.8",
@@ -50,6 +53,7 @@
     "react-headroom": "^2.2.8",
     "react-helmet": "^5.2.1",
     "react-typography": "^0.16.19",
+    "serverless-http": "^2.5.0",
     "typeface-candal": "0.0.54",
     "typeface-open-sans": "0.0.54",
     "typography": "^0.16.19"

@@ -22,7 +22,7 @@ const Footer = () => (
   <Wrapper>
     <Text>
       <div>
-        &copy;ScifiandTech - 2019
+        &copy;ScifiandTech - 2020
       </div>
       <div>Built with Gatsby</div>
     </Text>

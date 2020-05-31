@@ -91,7 +91,7 @@ const Title = styled.h1`
   
 `;
 
-const BlogList = ({ path, cover, title, date, excerpt, tags }) => (
+const BlogList = ({ path, cover, title, date, core, tags, published }) => (
   <Container>
     <Wrapper>
       <Image>
@@ -105,7 +105,7 @@ const BlogList = ({ path, cover, title, date, excerpt, tags }) => (
           <Title>{title}</Title>
         </Link>
         <TagsBlock list={tags} />
-        {excerpt}
+        {core}
       </Information>
     </Wrapper>
   </Container>
@@ -116,7 +116,8 @@ export default BlogList;
 BlogList.propTypes = {
   cover: PropTypes.object.isRequired,
   path: PropTypes.string.isRequired,
-  excerpt: PropTypes.string,
+  published: PropTypes.bool.isRequired,
+  core: PropTypes.string,
   date: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   tags: PropTypes.array.isRequired,

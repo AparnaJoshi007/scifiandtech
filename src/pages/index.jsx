@@ -1,5 +1,5 @@
 import React from 'react';
-import { graphql } from 'gatsby';
+import { graphql, Link } from 'gatsby';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 import styled from '@emotion/styled';
@@ -46,8 +46,8 @@ const Index = ({ data }) => {
       </SimpleHeader>
       <PostWrapper>
         {edges.map(({ node }) => {
-          const { id, excerpt, frontmatter } = node;
-          const { cover, path, title, date } = frontmatter;
+          const { id, frontmatter } = node;
+          const { cover, path, title, date, published, core } = frontmatter;
           return (
             <PostList
               key={id}
@@ -55,11 +55,13 @@ const Index = ({ data }) => {
               path={path}
               title={title}
               date={date}
-              excerpt={excerpt}
+              core={core}
+              published={published}
             />
           );
         })}
       </PostWrapper>
+      <Anchor href="/blog">View more</Anchor>
     </Layout>
   );
 };
@@ -72,13 +74,14 @@ Index.propTypes = {
       edges: PropTypes.arrayOf(
         PropTypes.shape({
           node: PropTypes.shape({
-            excerpt: PropTypes.string,
             frontmatter: PropTypes.shape({
               cover: PropTypes.object.isRequired,
               path: PropTypes.string.isRequired,
               title: PropTypes.string.isRequired,
               date: PropTypes.string.isRequired,
               tags: PropTypes.array,
+              core: PropTypes.string,
+              published: PropTypes.bool.isRequired
             }),
           }),
         }).isRequired
@@ -105,12 +108,13 @@ export const query = graphql`
       edges {
         node {
           id
-          excerpt(pruneLength: 75)
           frontmatter {
             title
             path
             tags
             date(formatString: "MM.DD.YYYY")
+            published
+            core
             cover {
               childImageSharp {
                 fluid(

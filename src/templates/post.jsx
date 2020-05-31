@@ -10,8 +10,6 @@ const SuggestionBar = styled.div`
   display: flex;
   flex-wrap: nowrap;
   justify-content: space-between;
-  background: ${props => props.theme.colors.white.light};
-  box-shadow: ${props => props.theme.shadow.suggestion};
 `;
 const PostSuggestion = styled.div`
   display: flex;
@@ -19,17 +17,27 @@ const PostSuggestion = styled.div`
   margin: 1rem 3rem 0 3rem;
 `;
 
+const Anchor = styled.a`
+  box-shadow: 0 1px 0 0 currentColor;
+  color: ${props => props.theme.colors.primary.base};
+  font-weight: bold;
+  &:hover {
+    color: ${props => props.theme.colors.complimentary.dark};
+  }
+  margin: 12px;
+`;
+
 const Post = ({ data, pageContext }) => {
   const { next, prev } = pageContext;
-  const {html, frontmatter, excerpt } = data.markdownRemark
-  const {date, title, tags, path, description} = frontmatter
+  const {html, frontmatter } = data.markdownRemark
+  const {date, title, tags, path, description, published, core} = frontmatter
   const image = frontmatter.cover.childImageSharp.fluid;
 
   return (
     <Layout headerlink={path}>
       <SEO
         title={title}
-        description={description || excerpt || ' '}
+        description={description || core || ' '}
         banner={image}
         pathname={path}
         article
@@ -42,18 +50,16 @@ const Post = ({ data, pageContext }) => {
       <SuggestionBar>
         <PostSuggestion>
           {prev && (
-            <Link to={prev.frontmatter.path}>
-              Previous
-              <h3>{prev.frontmatter.title}</h3>
-            </Link>
+            <Anchor href={prev.frontmatter.path}>
+              ← {prev.frontmatter.title}
+            </Anchor>
           )}
         </PostSuggestion>
         <PostSuggestion>
           {next && (
-            <Link to={next.frontmatter.path}>
-              Next
-              <h3>{next.frontmatter.title}</h3>
-            </Link>
+            <Anchor href={next.frontmatter.path}>
+              {next.frontmatter.title} →
+            </Anchor>
           )}
         </PostSuggestion>
       </SuggestionBar>
@@ -79,6 +85,8 @@ export const query = graphql`
         date
         title
         tags
+        core
+        published
         cover {
           childImageSharp {
             fluid(

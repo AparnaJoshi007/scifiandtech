@@ -7,7 +7,6 @@ exports.createPages = ({ graphql, actions }) => {
     const postTemplate = path.resolve('src/templates/post.jsx');
     const tagPage = path.resolve('src/pages/tags.jsx');
     const tagPosts = path.resolve('src/templates/tag.jsx');
-
     resolve(
       graphql(
         `

@@ -21,7 +21,8 @@ const Blog = ({ data }) => {
           title={node.frontmatter.title}
           date={node.frontmatter.date}
           tags={node.frontmatter.tags}
-          excerpt={node.excerpt}
+          core={node.frontmatter.core}
+          published={node.frontmatter.published}
         />
       ))}
     </Layout>
@@ -36,13 +37,13 @@ Blog.propTypes = {
       edges: PropTypes.arrayOf(
         PropTypes.shape({
           node: PropTypes.shape({
-            excerpt: PropTypes.string,
             frontmatter: PropTypes.shape({
               cover: PropTypes.object.isRequired,
               path: PropTypes.string.isRequired,
               title: PropTypes.string.isRequired,
               date: PropTypes.string.isRequired,
               tags: PropTypes.array,
+              core: PropTypes.string,
             }),
           }),
         }).isRequired
@@ -57,12 +58,13 @@ export const query = graphql`
       edges {
         node {
           id
-          excerpt(pruneLength: 200)
           frontmatter {
             title
             path
             tags
+            published
             date(formatString: "MM.DD.YYYY")
+            core
             cover {
               childImageSharp {
                 fluid(
